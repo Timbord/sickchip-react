@@ -102,45 +102,43 @@ export default function SettingsView() {
   ];
 
   return (
-    <PageTransition>
-      <div className="flex flex-col min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-        <div className="w-full">
-          <motion.ul
-            role="list"
-            className="divide-y divide-gray-200"
-            drag="y"
-            dragConstraints={{ top: -500, bottom: 50 }}>
-            {notifications.map((notification, index) => (
-              <li key={index} className="py-4">
-                <motion.div
-                  className="flex space-x-3"
-                  whileTap={{ scale: 0.95 }}>
-                  <div
-                    className={classNames(
-                      notification.bgColor,
-                      "flex-shrink-0 flex items-center justify-center w-16 text-white text-sm font-medium rounded-md"
-                    )}>
-                    {notification.type}
-                  </div>
-                  <div className="flex-1 space-y-1">
-                    <div className="flex items-center justify-between">
-                      <h3 className="text-sm font-medium">
-                        {notification.category}
-                      </h3>
-                      <p className="text-sm text-gray-500">
-                        {notification.timestamp}
-                      </p>
-                    </div>
+    <div className="flex flex-col min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+      <div className="w-full">
+        <motion.ul
+          role="list"
+          className="divide-y divide-gray-200"
+          drag="y"
+          dragConstraints={{ top: -500, bottom: 50 }}
+        >
+          {notifications.map((notification, index) => (
+            <li key={index} className="py-4">
+              <motion.div className="flex space-x-3" whileTap={{ scale: 0.95 }}>
+                <div
+                  className={classNames(
+                    notification.bgColor,
+                    "flex-shrink-0 flex items-center justify-center w-16 text-white text-sm font-medium rounded-md"
+                  )}
+                >
+                  {notification.type}
+                </div>
+                <div className="flex-1 space-y-1">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-sm font-medium">
+                      {notification.category}
+                    </h3>
                     <p className="text-sm text-gray-500">
-                      {notification.message}
+                      {notification.timestamp}
                     </p>
                   </div>
-                </motion.div>
-              </li>
-            ))}
-          </motion.ul>
-        </div>
+                  <p className="text-sm text-gray-500">
+                    {notification.message}
+                  </p>
+                </div>
+              </motion.div>
+            </li>
+          ))}
+        </motion.ul>
       </div>
-    </PageTransition>
+    </div>
   );
 }

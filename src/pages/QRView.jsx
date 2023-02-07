@@ -4,6 +4,7 @@ import { setAppTitle } from "../store";
 import { setShowAppBar } from "../store";
 import { setShowBottomBar } from "../store";
 import { setShowBackBtn } from "../store";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function QRView() {
   const [data, setData] = useState(null);
@@ -57,35 +58,45 @@ export default function QRView() {
             </div>
           </div>
         </div>
-        {showQrReader && (
-          <div className="QrReaderCanvas">
-            <QrReader
-              scanDelay={1000}
-              constraints={{
-                facingMode: "environment",
-              }}
-              onResult={(result) => {
-                setData(result?.text);
-                if (result?.text != undefined) setShowQrReader(false);
-                //if (!!result) {}
-              }}
-            />
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="w-6 h-6"
+        <AnimatePresence>
+          {showQrReader && (
+            <motion.div
+              className="QrReaderCanvas fixed top-0 left-0 h-1/2 w-full bg-black rounded-b-[25px] z-50 flex justify-center items-center overflow-hidden"
+              initial={{ y: "-120%" }}
+              animate={{ y: 0 }}
+              exit={{ y: "-120%" }}
+              transition={{ ease: "easeOut", duration: 0.35 }}
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6 18L18 6M6 6l12 12"
+              <QrReader
+              containerStyle={{ width: "100%", height: "100%" }}
+                scanDelay={1000}
+                constraints={{
+                  facingMode: "environment",
+                }}
+                onResult={(result) => {
+                  setData(result?.text);
+                  if (result?.text != undefined) setShowQrReader(false);
+                  //if (!!result) {}
+                }}
               />
-            </svg>
-          </div>
-        )}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-8 h-8 absolute top-4 right-4 cursor-pointer text-gray-900 bg-white p-2 rounded-full"
+                onClick={() => setShowQrReader(false)}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );

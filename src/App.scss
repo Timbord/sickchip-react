@@ -15,25 +15,20 @@ body {
 
 .QrReaderCanvas {
   section {
-    position: fixed !important;
-    bottom: 0 !important;
     width: 100% !important;
-    z-index: 9 !important;
-    border-radius: 25px !important;
-    padding: 1rem !important;
-    margin-bottom: 100px !important;
+    height: 100% !important;
     div {
-      border-radius: 20px !important;
-      overflow: hidden !important;
-      position: relative !important;
+      width: 100% !important;
+      height: 100% !important;
       padding-top: unset !important;
-      box-shadow: 5px 5px 20px 0px rgb(64 64 64 / 65%);
-      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       video {
-        position: relative !important;
-        left: 0 !important;
-        top: 0 !important;
-        opacity: 1 !important;
+        top: unset !important;
+        left: unset !important;
+        width: unset !important;
+        max-width: unset !important;
       }
     }
   }

@@ -15,7 +15,6 @@ export default function ProfileView() {
   }, []);
 
   return (
-    <PageTransition>
       <div className="relative mt-[75px]">
         <div className="mx-auto px-6">
           <ul role="list" className="divide-y divide-gray-200">
@@ -255,6 +254,5 @@ export default function ProfileView() {
           </div>
         </div>
       </div>
-    </PageTransition>
   );
 }
