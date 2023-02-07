@@ -1,60 +1,51 @@
-import React, { useState, useEffect} from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
-import SettingsIcon from '@mui/icons-material/Settings';
-import logo from '../assets/logo.png';
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useStore } from "@nanostores/react";
+import { appTitle } from "../store";
+import { showAppBar } from "../store";
+import { showBackBtn } from "../store";
 
-export default function ButtonAppBar() {
-  const [isBasePage, setIsBasePage] = useState(false);
-  const [button, setButton] = useState(null);
-  const [height, setHeight] = useState({height: 100});
+export default function AppBar() {
+  const title = useStore(appTitle);
+  const showBar = useStore(showAppBar);
+  const showBack = useStore(showBackBtn);
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    setIsBasePage(window.location.pathname === '/');
-  }, []);
+  const goBack = () => {
+    navigate(-1);
+  };
 
-  useEffect(() => {
-    if(isBasePage) {
-      setButton(settingsButton);
-      setHeight({height: 250});
-    } else {
-      setButton(menuButton);
-      setHeight({height: 100});
-    }
-  }, [isBasePage]);
-
-  const settingsButton = (
-    <IconButton size="large"
-    color="inherit"
-    edge="end"
-    aria-label="settings">
-      <SettingsIcon />
-    </IconButton>
-  );
-
-  const menuButton = (
-    <IconButton size="large"
-    color="inherit"
-    edge="end"
-    aria-label="menu">
-      <MenuIcon />
-    </IconButton>
+  const back = (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className="w-6 h-6 mr-2"
+      onClick={goBack}
+    >
+      <path
+        fillRule="evenodd"
+        d="M11.03 3.97a.75.75 0 010 1.06l-6.22 6.22H21a.75.75 0 010 1.5H4.81l6.22 6.22a.75.75 0 11-1.06 1.06l-7.5-7.5a.75.75 0 010-1.06l7.5-7.5a.75.75 0 011.06 0z"
+        clipRule="evenodd"
+      />
+    </svg>
   );
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={height}>
-        <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            <img src={logo} alt="SickChip" className="logo" />
-          </Typography>
-          {button}
-        </Toolbar>
-      </AppBar>
-    </Box>
+    showBar && (
+      <div className="fixed w-full top-0">
+        <div className="mx-auto px-6">
+          <div className="flex items-center justify-between border-b-2 border-gray-100 py-4 md:justify-start md:space-x-10">
+            <div className="flex items-center">
+             {showBack && back} 
+              <h4 className="font-bold leading-tight text-xl m-0 text-grey-900">
+                {title}
+              </h4>
+            </div>
+            <img className="h-8 w-auto" src="./logo.png" alt="SickChip" />
+          </div>
+        </div>
+      </div>
+    )
   );
 }

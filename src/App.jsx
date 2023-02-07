@@ -1,17 +1,25 @@
 import React, { useEffect, useState } from "react";
-import "./App.css";
-import CssBaseline from "@mui/material/CssBaseline";
+import "./App.scss";
 import AppBar from "./components/AppBar";
 import BottomNav from "./components/BottomNav";
+import LoginView from "./pages/LoginView";
+import ProfileView from "./pages/ProfileView";
+import EmergencyView from "./pages/EmergencyView";
+import CalendarView from "./pages/CalendarView";
+import SettingsView from "./pages/SettingsView";
+import { Routes, Route } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
+import { useLocation } from "react-router-dom";
 
 function App() {
-  const [isIOS, setIsIOS] = useState(false);
-  const [isWebApp, setIsWebApp] = useState(false);
+  const [isIOS, setIsIOS] = useState(true);
+  const [isWebApp, setIsWebApp] = useState(true);
+  const location = useLocation();
 
   useEffect(() => {
-    const iOS =
-      /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-    setIsIOS(iOS);
+    // const iOS =
+    //   /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    // setIsIOS(iOS);
     if (window.matchMedia("(display-mode: standalone)").matches) {
       setIsWebApp(true);
     }
@@ -24,17 +32,21 @@ function App() {
         the best experience.
       </p>
     );
-    if (!isWebApp)
-    return (
-      <p>
-        To use this app, you need to add it to your home screen.
-      </p>
-    );
+  if (!isWebApp)
+    return <p>To use this app, you need to add it to your home screen.</p>;
 
   return (
     <React.Fragment>
-      <CssBaseline />
       <AppBar />
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<LoginView />} />
+          <Route path="/profile" element={<ProfileView />} />
+          <Route path="/emergency" element={<EmergencyView />} />
+          <Route path="/calendar" element={<CalendarView />} />
+          <Route path="/settings" element={<SettingsView />} />
+        </Routes>
+      </AnimatePresence>
       <BottomNav />
     </React.Fragment>
   );
