@@ -48,7 +48,7 @@ const meetings = [
     id: 1,
     name: "Dr. Wolf",
     imageUrl:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80",
     start: "1:00 PM",
     startDatetime: "2022-01-21T13:00",
     end: "2:30 PM",
@@ -167,7 +167,7 @@ export default function CalendarView() {
               <img
                 src={meeting.imageUrl}
                 alt=""
-                className="h-10 w-10 flex-none rounded-full"
+                className="h-10 w-10 flex-none rounded-full object-cover"
               />
               <div className="flex-auto">
                 <p className="text-gray-900">{meeting.name}</p>

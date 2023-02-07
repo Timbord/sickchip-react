@@ -18,8 +18,8 @@ export default function ProfileView() {
         <ul role="list" className="divide-y divide-gray-200">
           <li className="py-4 flex items-center">
             <img
-              className="h-[4rem] w-[4rem] rounded-full"
-              src="./person.png"
+              className="h-[4rem] w-[4rem] rounded-full object-cover"
+              src="https://images.unsplash.com/photo-1675253264487-bf2dda3a536b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80"
               alt="Profile Picture"
             />
             <div className="ml-3">
@@ -88,8 +88,8 @@ export default function ProfileView() {
           <li className="py-2 flex items-center justify-between">
             <div className="flex items-center">
               <img
-                className="h-12 w-12 rounded-full"
-                src="./mama.jpg"
+                className="h-12 w-12 rounded-full object-cover"
+                src="https://images.unsplash.com/photo-1674376906038-a18fed600a55?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80"
                 alt="Profile Picture"
               />
               <div className="ml-3">
@@ -132,7 +132,7 @@ export default function ProfileView() {
             <div className="flex items-center">
               <img
                 className="h-12 w-12 rounded-full object-cover"
-                src="./girlfriend.webp"
+                src="https://images.unsplash.com/photo-1674376890916-7e742a12a943?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDEwfHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=256&q=60"
                 alt="Profile Picture"
               />
               <div className="ml-3">

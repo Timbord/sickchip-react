@@ -21,8 +21,8 @@ export default function ProfileView() {
           <ul role="list" className="divide-y divide-gray-200">
             <li className="py-4 flex items-center">
               <img
-                className="h-[4rem] w-[4rem] rounded-full"
-                src="./person.png"
+                className="h-[4rem] w-[4rem] rounded-full object-cover"
+                src="https://images.unsplash.com/photo-1675253264487-bf2dda3a536b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80"
                 alt="Profile Picture"
               />
               <div className="ml-3">
@@ -249,7 +249,7 @@ export default function ProfileView() {
                       24. Feb
                     </p>
                     <p className="text-sm font-medium text-gray-900">
-                      Doctor, 1:00 PM
+                      Doctor, 01:00 PM
                     </p>
                   </div>
                 </div>
