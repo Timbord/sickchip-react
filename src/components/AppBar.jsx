@@ -32,7 +32,7 @@ export default function AppBar() {
 
   return (
     showBar && (
-      <div className="fixed w-full top-0 bg-white z-50">
+      <div className="fixed w-full top-0 bg-white z-50 mt-2">
         <div className="mx-auto px-6">
           <div className="flex items-center justify-between border-b-2 border-gray-100 py-4 md:justify-start md:space-x-10">
             <div className="flex items-center">

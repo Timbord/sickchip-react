@@ -69,7 +69,7 @@ export default function CalendarView() {
   }, []);
 
   return (
-    <div className="mx-auto px-6 mt-[75px]">
+    <div className="mx-auto px-6 mt-[85px]">
       <div className="flex items-center">
         <h2 className="flex-auto font-semibold text-gray-900">February 2023</h2>
         <button

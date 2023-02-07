@@ -7,7 +7,6 @@ import ProfileView from "./pages/ProfileView";
 import EmergencyView from "./pages/EmergencyView";
 import CalendarView from "./pages/CalendarView";
 import SettingsView from "./pages/SettingsView";
-import NotificationView from "./pages/NotificationView";
 import { Routes, Route } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { useLocation } from "react-router-dom";
@@ -47,6 +46,7 @@ function App() {
           <Route path="/emergency" element={<EmergencyView />} />
           <Route path="/calendar" element={<CalendarView />} />
           <Route path="/settings" element={<SettingsView />} />
+          <Route path="/qrcode" element={<QRView />} />
         </Routes>
       </AnimatePresence>
       <BottomNav />
