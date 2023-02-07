@@ -11,25 +11,27 @@ export default function BottomNavigation() {
       <div className="fixed w-full bottom-0 border-t-2 pt-4 pb-8 bg-gray-100">
         <div className="w-full">
           <div className="flex justify-evenly">
-            <Link to="/profile" className="flex flex-col items-center text-gray-500">
+            <Link
+              to="/profile"
+              className="flex flex-col items-center text-gray-500">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                className="w-6 h-6"
-              >
+                className="w-6 h-6">
                 <path d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z" />
                 <path d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z" />
               </svg>
               <p className="text-sm text-gray-500">Home</p>
             </Link>
-            <Link to="/notification" className="flex flex-col items-center text-gray-500">
+            <Link
+              to="/notification"
+              className="flex flex-col items-center text-gray-500">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                className="w-6 h-6"
-              >
+                className="w-6 h-6">
                 <path
                   fillRule="evenodd"
                   d="M5.25 9a6.75 6.75 0 0113.5 0v.75c0 2.123.8 4.057 2.118 5.52a.75.75 0 01-.297 1.206c-1.544.57-3.16.99-4.831 1.243a3.75 3.75 0 11-7.48 0 24.585 24.585 0 01-4.831-1.244.75.75 0 01-.298-1.205A8.217 8.217 0 005.25 9.75V9zm4.502 8.9a2.25 2.25 0 104.496 0 25.057 25.057 0 01-4.496 0z"
@@ -38,13 +40,14 @@ export default function BottomNavigation() {
               </svg>
               <p className="text-sm text-gray-500">Notification</p>
             </Link>
-            <Link to="/settings" className="flex flex-col items-center text-gray-500">
+            <Link
+              to="/settings"
+              className="flex flex-col items-center text-gray-500">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                className="w-6 h-6"
-              >
+                className="w-6 h-6">
                 <path d="M17.004 10.407c.138.435-.216.842-.672.842h-3.465a.75.75 0 01-.65-.375l-1.732-3c-.229-.396-.053-.907.393-1.004a5.252 5.252 0 016.126 3.537zM8.12 8.464c.307-.338.838-.235 1.066.16l1.732 3a.75.75 0 010 .75l-1.732 3.001c-.229.396-.76.498-1.067.16A5.231 5.231 0 016.75 12c0-1.362.519-2.603 1.37-3.536zM10.878 17.13c-.447-.097-.623-.608-.394-1.003l1.733-3.003a.75.75 0 01.65-.375h3.465c.457 0 .81.408.672.843a5.252 5.252 0 01-6.126 3.538z" />
                 <path
                   fillRule="evenodd"

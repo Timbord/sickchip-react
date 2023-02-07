@@ -18,5 +18,5 @@ export const setShowBottomBar = (bool) => {
 };
 
 export const setShowBackBtn = (bool) => {
-    showBackBtn.set(bool);
-  };
+  showBackBtn.set(bool);
+};
