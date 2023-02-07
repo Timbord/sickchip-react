@@ -5,18 +5,17 @@ const direction = 1;
 const variants = {
   inital: (direction) => {
     return {
-      x: direction > 0 ? -1000 : 1000,
+      x: direction > 0 ? "-100%" : "100%",
       opacity: 0,
     };
   },
   animate: {
-    zIndex: 1,
     x: 0,
     opacity: 1,
   },
   exit: (direction) => {
     return {
-      x: direction > 0 ? 1000 : -1000,
+      x: direction > 0 ? "100%" : "-100%",
       opacity: 0,
     };
   },
