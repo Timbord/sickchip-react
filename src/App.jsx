@@ -7,6 +7,8 @@ import ProfileView from "./pages/ProfileView";
 import EmergencyView from "./pages/EmergencyView";
 import CalendarView from "./pages/CalendarView";
 import SettingsView from "./pages/SettingsView";
+import NotificationView from "./pages/NotificationView";
+import QRView from "./pages/QRView";
 import { Routes, Route } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { useLocation } from "react-router-dom";
