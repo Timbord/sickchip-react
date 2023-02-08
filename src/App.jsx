@@ -15,14 +15,14 @@ import { AnimatePresence } from "framer-motion";
 import { useLocation } from "react-router-dom";
 
 function App() {
-  const [isIOS, setIsIOS] = useState(true);
-  const [isWebApp, setIsWebApp] = useState(true);
+  const [isIOS, setIsIOS] = useState(false);
+  const [isWebApp, setIsWebApp] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
-    // const iOS =
-    //   /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-    // setIsIOS(iOS);
+    const iOS =
+      /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    setIsIOS(iOS);
     if (window.matchMedia("(display-mode: standalone)").matches) {
       setIsWebApp(true);
     }
