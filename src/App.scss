@@ -18,17 +18,12 @@ body {
     width: 100% !important;
     height: 100% !important;
     div {
-      width: 100% !important;
-      height: 100% !important;
       padding-top: unset !important;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      height: 100%;
       video {
+        height: unset !important;
+        bottom: 0 !important;
         top: unset !important;
-        left: unset !important;
-        width: unset !important;
-        max-width: unset !important;
       }
     }
   }

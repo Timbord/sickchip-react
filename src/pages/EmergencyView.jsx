@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { motion } from "framer-motion";
 import { setAppTitle } from "../store";
 import { setShowAppBar } from "../store";
 import { setShowBottomBar } from "../store";
@@ -10,6 +9,7 @@ export default function ProfileView() {
     setAppTitle("Emergency");
     setShowAppBar(true);
     setShowBackBtn(false);
+    setShowBottomBar(false)
   }, []);
 
   return (

@@ -9,6 +9,7 @@ import CalendarView from "./pages/CalendarView";
 import SettingsView from "./pages/SettingsView";
 import NotificationView from "./pages/NotificationView";
 import QRView from "./pages/QRView";
+import NicoView from "./pages/NicoView";
 import { Routes, Route } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { useLocation } from "react-router-dom";
@@ -49,6 +50,7 @@ function App() {
           <Route path="/calendar" element={<CalendarView />} />
           <Route path="/settings" element={<SettingsView />} />
           <Route path="/qrcode" element={<QRView />} />
+          <Route path="/nico" element={<NicoView />} />
         </Routes>
       </AnimatePresence>
       <BottomNav />

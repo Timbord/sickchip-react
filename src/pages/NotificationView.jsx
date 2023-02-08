@@ -1,13 +1,9 @@
-import React, { Fragment, useEffect, useState, useRef } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect} from "react";
 import { setAppTitle } from "../store";
 import { setShowAppBar } from "../store";
 import { setShowBottomBar } from "../store";
 import { setShowBackBtn } from "../store";
 import { motion } from "framer-motion";
-import { Dialog, Transition } from "@headlessui/react";
-import { ExclamationCircleIcon } from "@heroicons/react/24/outline";
-import { PageTransition } from "../components/PageTransition";
 
 export default function SettingsView() {
   useEffect(() => {
@@ -108,7 +104,7 @@ export default function SettingsView() {
           role="list"
           className="divide-y divide-gray-200"
           drag="y"
-          dragConstraints={{ top: -500, bottom: 0 }}
+          dragConstraints={{ top: -575, bottom: 0 }}
         >
           {notifications.map((notification, index) => (
             <li key={index} className="py-4">

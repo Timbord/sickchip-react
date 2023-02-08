@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { PageTransition } from "../components/PageTransition";
 import { setAppTitle } from "../store";
 import { setShowAppBar } from "../store";
 import { setShowBottomBar } from "../store";

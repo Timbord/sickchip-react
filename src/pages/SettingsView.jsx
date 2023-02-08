@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { setAppTitle } from "../store";
 import { setShowAppBar } from "../store";
@@ -155,7 +155,7 @@ export default function SettingsView() {
           </li>
         ))}
       </ul>
-      <p className="text-sm font-medium text-gray-300 mt-32">
+      <p className="text-sm font-medium text-gray-300 mt-24">
         Copyright&copy; 2023 <br /> Nico Thiele & Lorenz Karow
       </p>
     </div>

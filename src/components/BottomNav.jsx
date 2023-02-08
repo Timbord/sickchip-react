@@ -1,4 +1,3 @@
-import React, { useEffect, useState, createRef } from "react";
 import { Link } from "react-router-dom";
 import { useStore } from "@nanostores/react";
 import { showBottomBar } from "../store";
@@ -8,7 +7,7 @@ export default function BottomNavigation() {
 
   return (
     show && (
-      <div className="fixed w-full bottom-0 border-t-2 pt-4 pb-8 bg-gray-100">
+      <div className="fixed w-full bottom-0 border-t pt-4 pb-8 bg-gray-100">
         <div className="w-full">
           <div className="flex justify-evenly">
             <Link
