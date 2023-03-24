@@ -28,13 +28,13 @@ function App() {
     }
   }, []);
 
-  if (!isIOS)
-    return (
-      <p>
-        This app is not optimized for your device. Please use an iOS device for
-        the best experience.
-      </p>
-    );
+  // if (!isIOS)
+  //   return (
+  //     <p>
+  //       This app is not optimized for your device. Please use an iOS device for
+  //       the best experience.
+  //     </p>
+  //   );
   if (!isWebApp)
     return <p>To use this app, you need to add it to your home screen.</p>;
 
